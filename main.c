@@ -1,6 +1,61 @@
 #include <stdlib.h>
 #include <stdio.h>
+struct Personajes{
+    char nombre[20];
+    char tipo[20];
+    int fuerza;
+    int salud;
+}personaje[5];
 
+void P(){
+    int f,j,mm;
+    f=1;
+    int indice=0;
+    do{
+        system("cls");
+        printf("QUE DESEA HACER?\n1.-INGRESAR UN NUEVO PERSONAJE\n2.-MOSTRAR PERSONAJES\n3.-salir\n");
+        scanf("%i",&mm);
+        if(mm==1){
+        do{
+        system("cls");
+        printf("INTRDUZCA EL NOMBRE DEL PERSONAJE %i\n",indice+1);
+        scanf("%s",&personaje[indice].nombre);
+        printf("INTRDUZCA EL TIPO DEL PERSONAJE %i\n",indice+1);
+        scanf("%s",&personaje[indice].tipo);
+        printf("INTRDUZCA LA FUERZA DEL PERSONAJE %i\n",indice+1);
+        scanf("%i",&personaje[indice].fuerza);
+        printf("INTRDUZCA LA SALUD DEL PERSONAJE %i\n",indice+1);
+        scanf("%i",&personaje[indice].salud);
+        printf("\nLOS DATOS DEL PERSONAJE %i SON:\n",indice+1);
+        printf("NOMBRE: %s\n",personaje[indice].nombre);
+        printf("TIPO: %s\n",personaje[indice].tipo);
+        printf("FUERZA: %i\n",personaje[indice].fuerza);
+        printf("SALUD: %i \n",personaje[indice].salud);
+        system("pause");
+        system("cls");
+        printf("DESEA INGRESAR OTRO PERSONAJE?(maximo 5 pesonajes)\n1.-SI\n2.-NO\n");
+        scanf("%i",&f);
+        if(f==2){
+            system("cls");
+            printf("EXCELENTE, CONTINUE\n");
+            system("pause");
+        }
+        indice++;
+        }while(f!=2&&indice<5);
+        }
+        if(mm==2){
+            for(j=0;j<indice;j++){
+                printf("\nLOS DATOS DEL PERSONAJE %i SON:\n",j+1);
+                printf("NOMBRE: %s\n",personaje[j].nombre);
+                printf("TIPO: %s\n",personaje[j].tipo);
+                printf("FUERZA: %i\n",personaje[j].fuerza);
+                printf("SALUD: %i \n",personaje[j].salud);
+                }
+            system("pause");
+        }
+}while(mm!=3);
+
+}
 void arr(){
     int a[5];
     int i;
@@ -51,8 +106,10 @@ int main(){
                 system("pause");
                 break;
             case 3:
+                system("cls");
+                P();
+                system("pause");
                 break;
-
             case 4:
                 s=1;
                 break;
