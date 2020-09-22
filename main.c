@@ -26,6 +26,8 @@ void mostrar(int n,char cadena[]){
 int main(){
     int s=0;
     int m;
+    char cadena[20];
+    int n;
     do{
         system("cls");
         printf("INTRODUZCA LA OPCION DE SU ELECCION\nOPCION 1 (SUMAR 5 NUMEROS INTRODUCIDOS EN UN ARREGLO Y SACAR SU PROMEDIO)\nOPCION 2(INCLUIR LA FUNCION VOID MOSTRAR())\nOPCION 3 (CREAR LA ESTRUCTURA PERSONAJE)\nOPCION 4 SALIR\nOPCION INTRODUCIDA\t");
@@ -38,7 +40,15 @@ int main(){
                 system("pause");
                 break;
             case 2:
-
+                system("cls");
+                printf("ESCRIBE UNA CADENA DE CARACTERES DE MAX 20\n");
+                fflush(stdin);
+                fgets(cadena, sizeof(cadena),stdin);
+                printf("CUANTAS VECES SE IMPRIMIRA EL ARREGLO?\n");
+                scanf("%i",&n);
+                printf("\n");
+                mostrar(n,cadena);
+                system("pause");
                 break;
             case 3:
                 break;
